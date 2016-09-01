@@ -8,6 +8,40 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+<b:if cond='data:blog.pageType == "index"'>
+ <meta expr:content='data:blog.title' property='og:site_name'/>
+ <meta content='en_US' property='og:locale'/>
+ <meta content='en_GB' property='og:locale:alternate'/>
+ <meta expr:content='data:blog.canonicalUrl' property='og:url'/>
+ <meta expr:content='data:blog.pageTitle' property='og:title'/>
+ <meta content='blog' property='og:type'/>
+ <b:else/>
+ <meta expr:content='data:blog.title' property='og:site_name'/>
+ <meta content='en_US' property='og:locale'/>
+ <meta content='en_GB' property='og:locale:alternate'/>
+ <meta expr:content='data:blog.canonicalUrl' property='og:url'/>
+ <meta expr:content='data:blog.pageName' property='og:title'/>
+ <meta content='article' property='og:type'/>
+ </b:if>
+ <b:if cond='data:blog.metaDescription'>
+ <meta expr:content='data:blog.metaDescription' property='og:description'/>
+ <b:else/>
+ <meta expr:content='data:post.snippet' property='og:description'/>
+ </b:if>
+ <b:if cond='data:blog.postImageUrl'>
+ <meta expr:content='data:blog.postImageUrl' property='og:image'/>
+ <b:else/>
+ <b:if cond='data:blog.postImageThumbnailUrl'>
+ <meta expr:content='data:blog.postThumbnailUrl' property='og:image'/>
+ <b:else/>
+ <meta content='YOUR-BLOG-LOGO-IMAGE-URL-HERE' property='og:image'/>
+ </b:if>
+ </b:if>
+ <b:if cond='data:blog.metaDescription'>
+<meta expr:content='data:blog.metaDescription' property='og:description'/>
+<b:else/>
+<meta content='YOUR-DESCRIPTION-HERE THAT-WILL-BE-VISIBLE-BELOW-YOUR-POST-TITLE' property='og:description'/>
+</b:if>    
   </head>
   <body>
     <section class="page-header">
